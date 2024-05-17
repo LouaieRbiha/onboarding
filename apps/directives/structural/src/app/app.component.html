@@ -1,1 +1,16 @@
 <router-outlet></router-outlet>
+<input type="checkbox" [(ngModel)]="isClicked">
+<div *customIf="isClicked">The checkbox is checked</div>
+<div *customIf="!isClicked">The checkbox is not checked</div>
+<ul>
+    <li *customFor="let item of items">{{ item }}</li>
+</ul>
+<ng-container *appAlternating="[templateOne, templateTwo]"></ng-container>
+
+<ng-template #templateOne>
+  <first-component></first-component>
+</ng-template>
+
+<ng-template #templateTwo>
+  <second-component></second-component>
+</ng-template>
